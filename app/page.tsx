@@ -8,6 +8,7 @@ interface Product {
   price: number;
 } 
 
+
 export default function Home() {
   const [product, setProduct] = useState<Product | null>(null);
   const [productId, setProductId] = useState(1); 
