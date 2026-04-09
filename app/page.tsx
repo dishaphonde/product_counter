@@ -6,11 +6,11 @@ interface Product {
   title: string;
   thumbnail: string;
   price: number;
-}
+} 
 
 export default function Home() {
   const [product, setProduct] = useState<Product | null>(null);
-  const [productId, setProductId] = useState(1); // 👈 dynamic id
+  const [productId, setProductId] = useState(1); 
 
   useEffect(() => {
     fetch(`https://api.freeapi.app/api/v1/public/randomproducts/${productId}`)
@@ -19,7 +19,7 @@ export default function Home() {
         setProduct(data.data);
       })
       .catch((err) => console.log(err));
-  }, [productId]); // 👈 refetch when id changes
+  }, [productId]); 
 
   const handleAdd = () => {
     setProductId(productId + 1);
